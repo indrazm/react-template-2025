@@ -1,3 +1,10 @@
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogTrigger,
+} from "@/components/alertDialog";
 import { Button } from "@/components/button";
 import { Input } from "@/components/input";
 
@@ -9,9 +16,22 @@ export const ExamplePage = () => {
         <Input className="block w-full" placeholder="Input your email" />
         <div className="space-y-1.5">
           <Button className="w-full">Hello!</Button>
-          <Button variant="secondary" className="w-full">
-            Hello!
-          </Button>
+          <AlertDialog>
+            <AlertDialogTrigger>
+              <Button variant="secondary" className="w-full">
+                Hello!
+              </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <div>Hey</div>
+              <AlertDialogAction>
+                <Button>Done!</Button>
+              </AlertDialogAction>
+              <AlertDialogCancel>
+                <Button>Cancel</Button>
+              </AlertDialogCancel>
+            </AlertDialogContent>
+          </AlertDialog>
         </div>
       </div>
     </div>
