@@ -14,20 +14,10 @@ const DialogPortal = ({ children }: { children: React.ReactNode }) => {
 };
 
 const DialogOverlay = ({ className }: { className?: string }) => {
-  return (
-    <RawDialog.Overlay
-      className={className || "animate-in fade-in-0 fixed inset-0 bg-black/50"}
-    />
-  );
+  return <RawDialog.Overlay className={className || "animate-in fade-in-0 fixed inset-0 bg-black/50"} />;
 };
 
-const DialogContent = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
+const DialogContent = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   return (
     <DialogPortal>
       <DialogOverlay />
@@ -47,92 +37,24 @@ const DialogContent = ({
   );
 };
 
-const DialogHeader = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <div
-      className={
-        className || "flex flex-col space-y-1.5 text-center sm:text-left"
-      }
-    >
-      {children}
-    </div>
-  );
+const DialogHeader = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+  return <div className={className || "flex flex-col space-y-1.5 text-center sm:text-left"}>{children}</div>;
 };
 
-const DialogFooter = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <div
-      className={
-        className ||
-        "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2"
-      }
-    >
-      {children}
-    </div>
-  );
+const DialogFooter = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+  return <div className={className || "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2"}>{children}</div>;
 };
 
-const DialogTitle = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <RawDialog.Title
-      className={
-        className || "text-lg leading-none font-semibold tracking-tight"
-      }
-    >
-      {children}
-    </RawDialog.Title>
-  );
+const DialogTitle = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+  return <RawDialog.Title className={className || "text-lg leading-none font-semibold tracking-tight"}>{children}</RawDialog.Title>;
 };
 
-const DialogDescription = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <RawDialog.Description className={className || "text-sm text-zinc-500"}>
-      {children}
-    </RawDialog.Description>
-  );
+const DialogDescription = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+  return <RawDialog.Description className={className || "text-sm text-zinc-500"}>{children}</RawDialog.Description>;
 };
 
-const DialogClose = ({
-  children,
-  className,
-}: {
-  children?: React.ReactNode;
-  className?: string;
-}) => {
+const DialogClose = ({ children, className }: { children?: React.ReactNode; className?: string }) => {
   return <RawDialog.Close className={className}>{children}</RawDialog.Close>;
 };
 
-export {
-  Dialog,
-  DialogTrigger,
-  DialogContent,
-  DialogHeader,
-  DialogFooter,
-  DialogTitle,
-  DialogDescription,
-  DialogClose,
-};
+export { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogFooter, DialogTitle, DialogDescription, DialogClose };

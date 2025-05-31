@@ -37,9 +37,7 @@ const popoverArrowVariants = tv({
   },
 });
 
-interface PopoverContentProps
-  extends React.ComponentPropsWithoutRef<typeof RawPopover.Content>,
-    VariantProps<typeof popoverContentVariants> {
+interface PopoverContentProps extends React.ComponentPropsWithoutRef<typeof RawPopover.Content>, VariantProps<typeof popoverContentVariants> {
   children: React.ReactNode;
   className?: string;
   align?: "start" | "center" | "end";
@@ -60,24 +58,13 @@ const PopoverPortal = ({ children }: { children: React.ReactNode }) => {
   return <RawPopover.Portal>{children}</RawPopover.Portal>;
 };
 
-const PopoverContent = ({
-  children,
-  className,
-  size,
-  variant,
-  align = "center",
-  sideOffset = 4,
-  ...props
-}: PopoverContentProps) => {
+const PopoverContent = ({ children, className, size, variant, align = "center", sideOffset = 4, ...props }: PopoverContentProps) => {
   return (
     <PopoverPortal>
       <RawPopover.Content
         align={align}
         sideOffset={sideOffset}
-        className={twMerge(
-          popoverContentVariants({ size, variant }),
-          className,
-        )}
+        className={twMerge(popoverContentVariants({ size, variant }), className)}
         {...props}
       >
         {children}

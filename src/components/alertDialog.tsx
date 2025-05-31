@@ -80,55 +80,25 @@ const AlertDialogPortal = ({ children }: { children: React.ReactNode }) => {
 };
 
 const AlertDialogOverlay = ({ className }: { className?: string }) => {
-  return (
-    <RawAlertDialog.Overlay
-      className={twMerge(alertDialogOverlayVariants(), className)}
-    />
-  );
+  return <RawAlertDialog.Overlay className={twMerge(alertDialogOverlayVariants(), className)} />;
 };
 
-const AlertDialogContent = ({
-  children,
-  className,
-  size,
-}: AlertDialogContentProps) => {
+const AlertDialogContent = ({ children, className, size }: AlertDialogContentProps) => {
   return (
     <AlertDialogPortal>
       <AlertDialogOverlay />
-      <RawAlertDialog.Content
-        className={twMerge(alertDialogContentVariants({ size }), className)}
-      >
-        {children}
-      </RawAlertDialog.Content>
+      <RawAlertDialog.Content className={twMerge(alertDialogContentVariants({ size }), className)}>{children}</RawAlertDialog.Content>
     </AlertDialogPortal>
   );
 };
 
-const AlertDialogTitle = ({
-  children,
-  className,
-  size,
-}: AlertDialogTitleProps) => {
-  return (
-    <RawAlertDialog.Title
-      className={twMerge(alertDialogTitleVariants({ size }), className)}
-    >
-      {children}
-    </RawAlertDialog.Title>
-  );
+const AlertDialogTitle = ({ children, className, size }: AlertDialogTitleProps) => {
+  return <RawAlertDialog.Title className={twMerge(alertDialogTitleVariants({ size }), className)}>{children}</RawAlertDialog.Title>;
 };
 
-const AlertDialogDescription = ({
-  children,
-  className,
-  size,
-}: AlertDialogDescriptionProps) => {
+const AlertDialogDescription = ({ children, className, size }: AlertDialogDescriptionProps) => {
   return (
-    <RawAlertDialog.Description
-      className={twMerge(alertDialogDescriptionVariants({ size }), className)}
-    >
-      {children}
-    </RawAlertDialog.Description>
+    <RawAlertDialog.Description className={twMerge(alertDialogDescriptionVariants({ size }), className)}>{children}</RawAlertDialog.Description>
   );
 };
 
@@ -142,12 +112,4 @@ const AlertDialogAction = ({ children }: { children: React.ReactNode }) => {
 };
 
 // Export the components as a namespace
-export {
-  AlertDialog,
-  AlertDialogTrigger,
-  AlertDialogContent,
-  AlertDialogTitle,
-  AlertDialogDescription,
-  AlertDialogCancel,
-  AlertDialogAction,
-};
+export { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogTitle, AlertDialogDescription, AlertDialogCancel, AlertDialogAction };

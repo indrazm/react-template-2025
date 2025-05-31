@@ -48,29 +48,17 @@ const radioGroupIconVariants = tv({
   },
 });
 
-interface RadioGroupProps
-  extends React.ComponentPropsWithoutRef<typeof RawRadioGroup.Root>,
-    VariantProps<typeof radioGroupVariants> {}
+interface RadioGroupProps extends React.ComponentPropsWithoutRef<typeof RawRadioGroup.Root>, VariantProps<typeof radioGroupVariants> {}
 
-interface RadioGroupItemProps
-  extends React.ComponentPropsWithoutRef<typeof RawRadioGroup.Item>,
-    VariantProps<typeof radioGroupItemVariants> {}
+interface RadioGroupItemProps extends React.ComponentPropsWithoutRef<typeof RawRadioGroup.Item>, VariantProps<typeof radioGroupItemVariants> {}
 
 const RadioGroup = ({ className, orientation, ...props }: RadioGroupProps) => {
-  return (
-    <RawRadioGroup.Root
-      className={twMerge(radioGroupVariants({ orientation }), className)}
-      {...props}
-    />
-  );
+  return <RawRadioGroup.Root className={twMerge(radioGroupVariants({ orientation }), className)} {...props} />;
 };
 
 const RadioGroupItem = ({ className, size, ...props }: RadioGroupItemProps) => {
   return (
-    <RawRadioGroup.Item
-      className={twMerge(radioGroupItemVariants({ size }), className)}
-      {...props}
-    >
+    <RawRadioGroup.Item className={twMerge(radioGroupItemVariants({ size }), className)} {...props}>
       <RawRadioGroup.Indicator className={radioGroupIndicatorVariants()}>
         <svg
           width="15"

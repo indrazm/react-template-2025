@@ -43,9 +43,7 @@ const tooltipArrowVariants = tv({
   },
 });
 
-interface TooltipContentProps
-  extends React.ComponentPropsWithoutRef<typeof RawTooltip.Content>,
-    VariantProps<typeof tooltipContentVariants> {
+interface TooltipContentProps extends React.ComponentPropsWithoutRef<typeof RawTooltip.Content>, VariantProps<typeof tooltipContentVariants> {
   children: React.ReactNode;
   className?: string;
   sideOffset?: number;
@@ -65,24 +63,10 @@ const TooltipPortal = ({ children }: { children: React.ReactNode }) => {
   return <RawTooltip.Portal>{children}</RawTooltip.Portal>;
 };
 
-const TooltipContent = ({
-  children,
-  className,
-  variant,
-  size,
-  sideOffset = 4,
-  ...props
-}: TooltipContentProps) => {
+const TooltipContent = ({ children, className, variant, size, sideOffset = 4, ...props }: TooltipContentProps) => {
   return (
     <TooltipPortal>
-      <RawTooltip.Content
-        sideOffset={sideOffset}
-        className={twMerge(
-          tooltipContentVariants({ variant, size }),
-          className,
-        )}
-        {...props}
-      >
+      <RawTooltip.Content sideOffset={sideOffset} className={twMerge(tooltipContentVariants({ variant, size }), className)} {...props}>
         {children}
         <RawTooltip.Arrow className={tooltipArrowVariants({ variant })} />
       </RawTooltip.Content>

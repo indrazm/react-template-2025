@@ -40,22 +40,10 @@ interface ProgressProps
   value?: number;
 }
 
-const Progress = ({
-  className,
-  size,
-  variant,
-  value,
-  ...props
-}: ProgressProps) => {
+const Progress = ({ className, size, variant, value, ...props }: ProgressProps) => {
   return (
-    <RawProgress.Root
-      className={twMerge(progressVariants({ size }), className)}
-      {...props}
-    >
-      <RawProgress.Indicator
-        className={progressIndicatorVariants({ variant })}
-        style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
-      />
+    <RawProgress.Root className={twMerge(progressVariants({ size }), className)} {...props}>
+      <RawProgress.Indicator className={progressIndicatorVariants({ variant })} style={{ transform: `translateX(-${100 - (value || 0)}%)` }} />
     </RawProgress.Root>
   );
 };

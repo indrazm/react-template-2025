@@ -110,9 +110,7 @@ const DropdownMenuRadioItem = ({
     >
       <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
         <RawDropdownMenu.ItemIndicator>
-          <span className="h-2 w-2 rounded-full bg-current fill-current">
-            ●
-          </span>
+          <span className="h-2 w-2 rounded-full bg-current fill-current">●</span>
         </RawDropdownMenu.ItemIndicator>
       </span>
       {children}
@@ -131,12 +129,7 @@ const DropdownMenuLabel = ({
   inset?: boolean;
 } & React.ComponentPropsWithoutRef<typeof RawDropdownMenu.Label>) => {
   return (
-    <RawDropdownMenu.Label
-      className={
-        className || `px-2 py-1.5 text-sm font-semibold ${inset ? "pl-8" : ""}`
-      }
-      {...props}
-    >
+    <RawDropdownMenu.Label className={className || `px-2 py-1.5 text-sm font-semibold ${inset ? "pl-8" : ""}`} {...props}>
       {children}
     </RawDropdownMenu.Label>
   );
@@ -148,24 +141,11 @@ const DropdownMenuSeparator = ({
 }: {
   className?: string;
 } & React.ComponentPropsWithoutRef<typeof RawDropdownMenu.Separator>) => {
-  return (
-    <RawDropdownMenu.Separator
-      className={className || "-mx-1 my-1 h-px bg-zinc-100"}
-      {...props}
-    />
-  );
+  return <RawDropdownMenu.Separator className={className || "-mx-1 my-1 h-px bg-zinc-100"} {...props} />;
 };
 
-const DropdownMenuShortcut = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLSpanElement>) => {
-  return (
-    <span
-      className={className || "ml-auto text-xs tracking-widest opacity-60"}
-      {...props}
-    />
-  );
+const DropdownMenuShortcut = ({ className, ...props }: React.HTMLAttributes<HTMLSpanElement>) => {
+  return <span className={className || "ml-auto text-xs tracking-widest opacity-60"} {...props} />;
 };
 
 const DropdownMenuGroup = RawDropdownMenu.Group;

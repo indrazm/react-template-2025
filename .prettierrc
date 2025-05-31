@@ -1,5 +1,5 @@
 {
-  "printWidth": 80,
+  "printWidth": 144,
   "plugins": ["prettier-plugin-tailwindcss"],
   "tailwindFunctions": ["tv"]
 }

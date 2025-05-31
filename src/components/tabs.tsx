@@ -25,13 +25,7 @@ const TabsList = ({
   className?: string;
 } & React.ComponentPropsWithoutRef<typeof RawTabs.List>) => {
   return (
-    <RawTabs.List
-      className={
-        className ||
-        "inline-flex h-10 items-center justify-center rounded-md bg-zinc-100 p-1 text-zinc-500"
-      }
-      {...props}
-    >
+    <RawTabs.List className={className || "inline-flex h-10 items-center justify-center rounded-md bg-zinc-100 p-1 text-zinc-500"} {...props}>
       {children}
     </RawTabs.List>
   );

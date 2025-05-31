@@ -49,16 +49,11 @@ const sliderThumbVariants = tv({
   },
 });
 
-interface SliderProps
-  extends React.ComponentPropsWithoutRef<typeof RawSlider.Root>,
-    VariantProps<typeof sliderVariants> {}
+interface SliderProps extends React.ComponentPropsWithoutRef<typeof RawSlider.Root>, VariantProps<typeof sliderVariants> {}
 
 const Slider = ({ className, size, ...props }: SliderProps) => {
   return (
-    <RawSlider.Root
-      className={twMerge(sliderVariants({ size }), className)}
-      {...props}
-    >
+    <RawSlider.Root className={twMerge(sliderVariants({ size }), className)} {...props}>
       <RawSlider.Track className={sliderTrackVariants({ size })}>
         <RawSlider.Range className={sliderRangeVariants()} />
       </RawSlider.Track>

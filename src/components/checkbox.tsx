@@ -35,16 +35,11 @@ const checkboxIconVariants = tv({
   },
 });
 
-interface CheckboxProps
-  extends React.ComponentPropsWithoutRef<typeof RawCheckbox.Root>,
-    VariantProps<typeof checkboxVariants> {}
+interface CheckboxProps extends React.ComponentPropsWithoutRef<typeof RawCheckbox.Root>, VariantProps<typeof checkboxVariants> {}
 
 const Checkbox = ({ className, size, ...props }: CheckboxProps) => {
   return (
-    <RawCheckbox.Root
-      className={twMerge(checkboxVariants({ size }), className)}
-      {...props}
-    >
+    <RawCheckbox.Root className={twMerge(checkboxVariants({ size }), className)} {...props}>
       <RawCheckbox.Indicator className={checkboxIndicatorVariants()}>
         <svg
           width="15"
@@ -54,13 +49,7 @@ const Checkbox = ({ className, size, ...props }: CheckboxProps) => {
           xmlns="http://www.w3.org/2000/svg"
           className={checkboxIconVariants({ size })}
         >
-          <path
-            d="m11.5 3.5-6 6-2.5-2.5"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <path d="m11.5 3.5-6 6-2.5-2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </RawCheckbox.Indicator>
     </RawCheckbox.Root>

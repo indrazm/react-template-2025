@@ -27,11 +27,7 @@ const AccordionItem = ({
   value: string;
 } & React.ComponentPropsWithoutRef<typeof RawAccordion.Item>) => {
   return (
-    <RawAccordion.Item
-      className={className || "border-b border-zinc-200"}
-      value={value}
-      {...props}
-    >
+    <RawAccordion.Item className={className || "border-b border-zinc-200"} value={value} {...props}>
       {children}
     </RawAccordion.Item>
   );
@@ -63,13 +59,7 @@ const AccordionTrigger = ({
           xmlns="http://www.w3.org/2000/svg"
           className="h-4 w-4 shrink-0 transition-transform duration-200"
         >
-          <path
-            d="m4.5 6 3 3 3-3"
-            stroke="currentColor"
-            strokeWidth="1"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <path d="m4.5 6 3 3 3-3" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </RawAccordion.Trigger>
     </RawAccordion.Header>
@@ -87,8 +77,7 @@ const AccordionContent = ({
   return (
     <RawAccordion.Content
       className={
-        className ||
-        "data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm transition-all"
+        className || "data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm transition-all"
       }
       {...props}
     >

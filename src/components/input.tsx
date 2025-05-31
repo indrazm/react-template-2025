@@ -16,16 +16,8 @@ const inputVariants = tv({
   },
 });
 
-interface InputProps
-  extends Omit<React.ComponentPropsWithoutRef<"input">, "size">,
-    VariantProps<typeof inputVariants> {}
+interface InputProps extends Omit<React.ComponentPropsWithoutRef<"input">, "size">, VariantProps<typeof inputVariants> {}
 
 export const Input = (props: InputProps) => {
-  return (
-    <input
-      {...props}
-      className={twMerge(inputVariants({ ...props }), props.className)}
-      size={undefined}
-    />
-  );
+  return <input {...props} className={twMerge(inputVariants({ ...props }), props.className)} size={undefined} />;
 };

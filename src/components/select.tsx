@@ -4,13 +4,7 @@ const Select = ({ children }: { children: React.ReactNode }) => {
   return <RawSelect.Root>{children}</RawSelect.Root>;
 };
 
-const SelectTrigger = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
+const SelectTrigger = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   return (
     <RawSelect.Trigger className={className}>
       {children}
@@ -33,13 +27,7 @@ const SelectPortal = ({ children }: { children: React.ReactNode }) => {
 };
 
 // Content component
-const SelectContent = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
+const SelectContent = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   return (
     <SelectPortal>
       <RawSelect.Content className={className}>
@@ -64,15 +52,7 @@ const SelectArrow = () => {
   return <RawSelect.Arrow />;
 };
 
-const SelectItem = ({
-  children,
-  value,
-  className,
-}: {
-  children: React.ReactNode;
-  value: string;
-  className?: string;
-}) => {
+const SelectItem = ({ children, value, className }: { children: React.ReactNode; value: string; className?: string }) => {
   return (
     <RawSelect.Item value={value} className={className}>
       <SelectItemText>{children}</SelectItemText>
@@ -89,23 +69,11 @@ const SelectItemIndicator = () => {
   return <RawSelect.ItemIndicator>✓</RawSelect.ItemIndicator>;
 };
 
-const SelectGroup = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
+const SelectGroup = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   return <RawSelect.Group className={className}>{children}</RawSelect.Group>;
 };
 
-const SelectLabel = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
+const SelectLabel = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   return <RawSelect.Label className={className}>{children}</RawSelect.Label>;
 };
 
