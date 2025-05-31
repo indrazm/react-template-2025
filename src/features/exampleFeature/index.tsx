@@ -1,12 +1,6 @@
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogTrigger,
-} from "@/components/alertDialog";
-import { Button } from "@/components/button";
-import { Input } from "@/components/input";
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogTrigger } from "@/components/ui/alertDialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 export const ExamplePage = () => {
   return (
